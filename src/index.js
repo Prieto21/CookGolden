@@ -36,6 +36,7 @@ app.use(require('./routes/autentication'));
 app.use('/links',require('./routes/links'));
 app.use('/CookGolden',require('./routes/bienvenida'));
 app.use('/CookGolden',require('./routes/usuario'));
+app.use('/CookGolden',require('./routes/administrador'));
 
 
 //public

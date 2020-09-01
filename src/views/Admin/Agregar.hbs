@@ -1,0 +1,89 @@
+<div class="container">
+    <center>
+        <br>
+        <h1>
+            <font size="9" face="Georgia, Arial" color="#990000">A</font><font color="white">gregar</font>
+        </h1>
+        <div class="alert ">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#recetas" role="tab"
+                        aria-controls="home" aria-selected="true">Recetas</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#nosotros" role="tab"
+                        aria-controls="profile" aria-selected="false">Nosotros</a>
+                </li>
+
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="recetas" role="tabpanel" aria-labelledby="home-tab">
+                    <br>
+                    <div class="alert" style="width: 35rem;">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="color: white;">NOMBRE</label>
+                                <input type="text" class="form-control" id="exampleInputEmail1"
+                                placeholder="Ingrese Nombre De La Receta" required
+                                    aria-describedby="emailHelp">
+
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="color: white;">DESCRIPCIÓN</label>
+                                <input type="text" class="form-control" 
+                                placeholder="Ingrese Descripcion" required
+                                id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="color: white;">CLASIFICACIÓN</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Comidas</option>
+                                    <option>Bebidas</option>
+                                    <option>Postres</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="color: white;">IMAGEN</label>
+                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+
+                            <button type="button" class="btn btn-outline-dark btn-block">
+                                <font style="color: white;">Agregar</font>
+                                </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="nosotros" role="tabpanel" aria-labelledby="profile-tab">
+                    <br>
+                    <div class="alert " style="width: 35rem;">
+
+                        <form>
+                           
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="color: white;">DESCRIPCIÓN</label>
+                                <input type="text" class="form-control" 
+                                placeholder="Ingrese Descripcion" required
+                                id="exampleInputPassword1">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="color: white;">CLASIFICACIÓN</label>
+                                <select class="form-control" id="exampleFormControlSelect1">
+                                    <option>Misión</option>
+                                    <option>Visión</option>
+                                    
+
+                                </select>
+                            </div>
+                            
+
+                            <button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Agregar</font></button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </center>
+</div>
