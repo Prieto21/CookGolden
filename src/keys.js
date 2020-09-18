@@ -3,6 +3,6 @@ module.exports = {
         host: 'localhost',
         user: 'root',
         password: '',
-        database: 'clasexpress'  
+        database: 'cookgolden'  
     }
 };

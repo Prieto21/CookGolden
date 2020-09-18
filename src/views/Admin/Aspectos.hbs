@@ -1,0 +1,368 @@
+{{#each fondo}}
+
+<body background="/imagenes/{{img}}">
+  {{/each}}
+  <div class="container">
+    <center>
+      <h1>
+        <font size="9" face="Georgia, Arial" color="#990000">A</font>
+        <font color="white">spectos </font>
+        <font size="9" face="Georgia, Arial" color="#990000">D</font>
+        <font color="white">e </font>
+        <font size="9" face="Georgia, Arial" color="#990000">L</font>
+        <font color="white">a</font>
+        <font size="9" face="Georgia, Arial" color="#990000">P</font>
+        <font color="white">agina</font>
+      </h1>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>¡Hola Aprovecha!</strong> Con nuestra nueva actualización puedes remodelar la pagina a tu gusto.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+
+              {{#each mision}}
+              <h5 class="card-title">{{mensaje}}</h5>
+              {{/each}}
+              <hr>
+              <form action="/CookGolden/mision" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Misión</label>
+                  <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              {{#each vision}}
+              <h5 class="card-title">{{mensaje}}</h5>
+              {{/each}}
+              <hr>
+              <form action="/CookGolden/vision" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Visión</label>
+                  <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card ">
+            <div class="card-body">
+
+              {{#each fondo}}
+
+              <img src="/imagenes/{{img}}" height="200">
+              <br>
+              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button>
+
+              {{/each}}
+
+              <hr>
+              <form action="/CookGolden/fondo" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlFile1">Fondo</label>
+                  <input type="file" class="form-control-file" name="img">
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+          
+            <div class="card-body">
+
+               {{#each carrusel}}
+
+              <img src="/imagenes/{{img}}" class="card-img-top">
+              <br>
+              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button>
+
+              {{/each}}
+
+              <hr>
+            
+                <form action="/CookGolden/carrusel" method="POST">
+                 <div class="form-group">
+                <label for="exampleFormControlTextarea1">Imagen De Carrusel</label>
+                  <input type="file" class="form-control-file" name="img">
+                </div>
+
+                <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+       
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+
+              {{#each nameperfil}}
+
+              <font size="9" face="Georgia" color="white">{{nombre}}</font>
+              <br>
+              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
+
+              <hr>
+             <form action="/CookGolden/perfil" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Titulo De Perfil</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre"
+                    aria-describedby="emailHelp">
+
+                </div>
+
+                <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+ <div class="col-sm-6">
+          <div class="card ">
+            <div class="card-body">
+              {{#each nombre}}
+
+              <font size="9" face="Georgia" color="black">{{nombre}}</font>
+              <br>
+              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
+              <hr>
+              <form action="/CookGolden/nombre" method="POST">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Nombre De La Pagina</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre"
+                    aria-describedby="emailHelp">
+
+                </div>
+
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card ">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Titulo De Recetas</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Titulo De Comidas</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Titulo De Bebidas</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Titulo De Postres</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card ">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Mensaje De Bienvenida</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Colores</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <br>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card text-white bg-dark">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Colores De Botonos De Bienvenida</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+
+              <h5 class="card-title">Special title treatment</h5>
+
+              <hr>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Titulo De Favoritos</label>
+                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+              </div>
+              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+    </center>
+  </div>

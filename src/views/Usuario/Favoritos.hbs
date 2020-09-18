@@ -5,276 +5,31 @@
             <font size="9" face="Georgia, Arial" color="#990000">F</font><font color="white">avoritos</font>
         </h1>
         <hr>
-        <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
+
+        <div class="row">
+
+
+            {{#each fav}}
+            <div class="col-lg-4 col-md-4 col-12">
+                <div class="card-deck">
+                    <div class="card">
+                <img src="/imagenes/{{img}}" class="card-img-top" height="270">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
                 </div>
                 <div class="card-footer">
                     <button type="button" class="btn btn-outline-danger">Eliminar</button>
                 </div>
             </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
                 </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
+                <br>
             </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
+
+            {{/each}}
+
         </div>
-        <br>
-        <!-- Cierre -->
-         <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
-        </div>
-        <br>
-        <!-- Cierre -->
-         <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
-        </div>
-        <br>
-        <!-- Cierre -->
-         <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
-        </div>
-        <br>
-        <!-- Cierre -->
-         <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
-        </div>
-        <br>
-        <!-- Cierre -->
-         <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
-        </div>
-        <br>
-        <!-- Cierre -->
-         <div class="card-deck">
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            <div class="card">
-                <img src="/imagenes/prueba.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This card has even longer content than the first to show that equal height
-                        action.</p>
-                </div>
-                <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
-                </div>
-            </div>
-            
+
         </div>
     </center>
 </div>

@@ -2,24 +2,30 @@
     <br>
     <center>
         <h1>
-            <font size="9" face="Georgia, Arial" color="#990000">P</font><font color="white">erfil</font>
+             {{#each nameperfil}}
+
+              <font size="9" face="Georgia" color="white">{{nombre}}</font>
+          
+              {{/each}}
         </h1>
+        {{#each user}}
         <div class="alert alert-dark" style="width: 35rem;" role="alert">
-            <img src="/imagenes/perfil.jpg">
+            <img src="/imagenes/{{img}}" height="250">
             <hr>
             <h4 style="color: black;">Nombre & Apellido </h4>
             <p>
-                <font style="color: black;" face="Georgia" size="4"> Sergio Alejandro Prieto Molano </font>
+                <font style="color: black;" face="Georgia" size="4"> {{nombre}} {{apellido}} </font>
             </p>
              <h4 style="color: black;">Usuario </h4>
             <p>
-                <font style="color: black;" face="Georgia" size="4"> Prieto21 </font>
+                <font style="color: black;" face="Georgia" size="4"> {{usuario}} </font>
             </p>
              <h4 style="color: black;">Contraseña </h4>
             <p>
-                <font style="color: black;" face="Georgia" size="4"> 123456789 </font>
+                <font style="color: black;" face="Georgia" size="4"> {{contra}} </font>
             </p>
             <button type="button" class="btn btn-outline-dark">Modificar</button>
         </div>
+        {{/each}}
     </center>
 </div>
