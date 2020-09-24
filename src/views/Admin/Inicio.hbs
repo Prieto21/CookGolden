@@ -85,8 +85,40 @@
                                                     <div class="card-footer">
                                                         <button type="button"
                                                             class="btn btn-outline-dark">Modificar</button>
-                                                        <button type="button"
-                                                            class="btn btn-outline-danger">Eliminar</button>
+                                                        
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#user{{id_usuario}}">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="user{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-white bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¡Mensaje!</h5>
+        
+      </div>
+      <div class="modal-body">
+        <h4>Estas seguro de eliminar:</h4> <br>
+         <img src="/imagenes/{{img}}"  height="200" width="200">
+                
+                    <h5 class="card-title">{{nombre}} {{apellido}}</h5>
+                    
+                    
+      </div>
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+        <a href="/CookGolden/userdelete/{{id_usuario}}">
+            <button type="button" class="btn btn-outline-danger">Aceptar</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
                                                     </div>
                                                 </div>
                                             </div>

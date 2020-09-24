@@ -5,14 +5,7 @@
   <div class="container">
     <center>
       <h1>
-        <font size="9" face="Georgia, Arial" color="#990000">A</font>
-        <font color="white">spectos </font>
-        <font size="9" face="Georgia, Arial" color="#990000">D</font>
-        <font color="white">e </font>
-        <font size="9" face="Georgia, Arial" color="#990000">L</font>
-        <font color="white">a</font>
-        <font size="9" face="Georgia, Arial" color="#990000">P</font>
-        <font color="white">agina</font>
+        <font size="9" face="Georgia, Arial" color="#990000">A</font><font color="white">spectos </font><font size="9" face="Georgia, Arial" color="#990000">D</font><font color="white">e </font><font size="9" face="Georgia, Arial" color="#990000">L</font><font color="white">a </font><font size="9" face="Georgia, Arial" color="#990000">P</font><font color="white">agina</font>
       </h1>
       <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>¡Hola Aprovecha!</strong> Con nuestra nueva actualización puedes remodelar la pagina a tu gusto.
@@ -76,7 +69,9 @@
 
               <img src="/imagenes/{{img}}" height="200">
               <br>
-              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              <a href="/CookGolden/fondodelete/{{id_fondo}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <button type="button" class="btn btn-outline-info ">Modificar</button>
 
@@ -99,24 +94,26 @@
 
         <div class="col-sm-6">
           <div class="card text-white bg-dark">
-          
+
             <div class="card-body">
 
-               {{#each carrusel}}
+              {{#each carrusel}}
 
               <img src="/imagenes/{{img}}" class="card-img-top">
               <br>
-              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              <a href="/CookGolden/carruseldelete/{{id_carrusel}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <button type="button" class="btn btn-outline-info ">Modificar</button>
 
               {{/each}}
 
               <hr>
-            
-                <form action="/CookGolden/carrusel" method="POST">
-                 <div class="form-group">
-                <label for="exampleFormControlTextarea1">Imagen De Carrusel</label>
+
+              <form action="/CookGolden/carrusel" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Imagen De Carrusel</label>
                   <input type="file" class="form-control-file" name="img">
                 </div>
 
@@ -132,7 +129,7 @@
 
 
 
-       
+
       <br>
 
       <div class="row">
@@ -144,13 +141,15 @@
 
               <font size="9" face="Georgia" color="white">{{nombre}}</font>
               <br>
-              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              <a href="/CookGolden/perfildelete/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <button type="button" class="btn btn-outline-info ">Modificar</button><br>
               {{/each}}
 
               <hr>
-             <form action="/CookGolden/perfil" method="POST">
+              <form action="/CookGolden/perfil" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Titulo De Perfil</label>
                   <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre"
@@ -165,14 +164,16 @@
         </div>
 
 
- <div class="col-sm-6">
+        <div class="col-sm-6">
           <div class="card ">
             <div class="card-body">
               {{#each nombre}}
 
               <font size="9" face="Georgia" color="black">{{nombre}}</font>
               <br>
-              <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              <a href="/CookGolden/pagdelete/{{id_nombre}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               <button type="button" class="btn btn-outline-info ">Modificar</button><br>
               {{/each}}
@@ -180,8 +181,8 @@
               <form action="/CookGolden/nombre" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nombre De La Pagina</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre"
-                    aria-describedby="emailHelp">
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre">
+
 
                 </div>
 
@@ -200,14 +201,25 @@
           <div class="card ">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each receta}}
+
+              <font size="9" face="Georgia" color="black">{{nombre}}</font>
+              <br>
+              <a href="/CookGolden/namerecet/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Titulo De Recetas</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+              <form action="/CookGolden/receta" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Titulo De Recetas</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -220,14 +232,25 @@
           <div class="card text-white bg-dark">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each comida}}
+
+              <font size="9" face="Georgia" color="white">{{nombre}}</font>
+              <br>
+              <a href="/CookGolden/comidadelete/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Titulo De Comidas</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+              <form action="/CookGolden/comida" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Titulo De Comidas</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                </div>
+                <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -241,14 +264,25 @@
           <div class="card text-white bg-dark">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each bebida}}
+
+              <font size="9" face="Georgia" color="white">{{nombre}}</font>
+              <br>
+              <a href="/CookGolden/bebidadelete/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Titulo De Bebidas</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+              <form action="/CookGolden/bebida" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Titulo De Bebidas</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                </div>
+                <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -261,14 +295,25 @@
           <div class="card">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each postre}}
+
+              <font size="9" face="Georgia" color="black">{{nombre}}</font>
+              <br>
+              <a href="/CookGolden/postredelete/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Titulo De Postres</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+              <form action="/CookGolden/postre" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Titulo De Postres</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -283,14 +328,26 @@
           <div class="card ">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each bienvenida}}
+
+              <font size="9" face="Georgia" color="black">{{mensaje}}</font>
+              <br>
+              <a href="/CookGolden/welcomedelete/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
+
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Mensaje De Bienvenida</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+              <form action="/CookGolden/bienvenida" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Mensaje De Bienvenida</label>
+                  <input type="text" class="form-control" name="mensaje" placeholder="Ingrese Titulo">
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -303,14 +360,26 @@
           <div class="card text-white bg-dark">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each colores}}
+
+              <button type="button" class="btn btn-{{color}}">{{color}}</button>
+              <a href="/CookGolden/coloresdelete/{{id_colores}}">
+                <button type="button" class="btn btn-outline-danger ">X</button>
+              </a>
+              <br>
+              
+
+
+              {{/each}}
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Colores</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+              <form action="/CookGolden/colores" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Colores</label>
+                  <input type="text" class="form-control" name="color" placeholder="Escribe el color">
+                </div>
+                <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -326,14 +395,32 @@
           <div class="card text-white bg-dark">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each btnColors}}
+
+              <button type="button" class="btn btn-outline-{{color}}">Color Actual</button>
+              
+<br>
+               <a href="/CookGolden/btncolorsdelete/{{id_botones}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+
+              {{/each}}
 
               <hr>
+              <form action="/CookGolden/btnColors" method="POST">
               <div class="form-group">
-                <label for="exampleFormControlTextarea1">Colores De Botonos De Bienvenida</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+                <label for="exampleFormControlSelect1">Color De Los Botones De Bienvenida</label>
+                <select class="form-control" name="id_color">
+                  {{#each colores}}
+                  <option value="{{id_colores}}">{{color}}</option>
+                  
+                  {{/each}}
+                </select>
               </div>
-              <button type="button" class="btn btn-outline-light btn-block">Guardar</button>
+              <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>
@@ -346,14 +433,25 @@
           <div class="card">
             <div class="card-body">
 
-              <h5 class="card-title">Special title treatment</h5>
+              {{#each namefavoritos}}
+
+              <font size="9" face="Georgia" color="black">{{nombre}}</font>
+              <br>
+              <a href="/CookGolden/namefavdelete/{{id}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              {{/each}}
 
               <hr>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Titulo De Favoritos</label>
-                <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
-              </div>
-              <button type="button" class="btn btn-outline-dark btn-block">Guardar</button>
+              <form action="/CookGolden/namefavoritos" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Titulo De Favoritos</label>
+                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                </div>
+                <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
+              </form>
             </div>
           </div>
         </div>

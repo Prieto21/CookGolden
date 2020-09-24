@@ -44,17 +44,30 @@
     <center>
         <br>
     <h1>
-        <font size="9" face="Georgia, Arial" color="#990000">B</font><font color="white">ienvenido A <font size="9" face="Georgia, Arial" color="#990000">C</font>ook<font size="9"
-                face="Georgia, Arial" color="#990000">G</font>oolden</font>
+         {{#each bienvenida}}
+
+              <font size="9" face="Georgia" color="white">{{mensaje}}</font>
+              
+              {{/each}}
     </h1>
     <br>
     <br><br>
-    <a href="/CookGolden/user/comidas"><button type="button" class="btn btn-outline-warning">Comidas</button></a>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <a href="/CookGolden/user/bebidas"><button type="button" class="btn btn-outline-warning">Bebidas</button></a>
-    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <a href="/CookGolden/user/postres"><button type="button" class="btn btn-outline-warning">Postres</button></a>
+     {{#each btnColors}}
 
+              
+              
+<a href="/CookGolden/user/comidas"><button type="button" class="btn btn-outline-{{color}}">Comidas</button></a>
+
+              {{/each}}
+    
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    {{#each btnColors}}
+    <a href="/CookGolden/user/bebidas"><button type="button" class="btn btn-outline-{{color}}">Bebidas</button></a>
+    {{/each}}
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+    {{#each btnColors}}
+    <a href="/CookGolden/user/postres"><button type="button" class="btn btn-outline-{{color}}">Postres</button></a>
+{{/each}}
 
 
 

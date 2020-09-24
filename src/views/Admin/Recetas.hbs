@@ -2,7 +2,12 @@
     <center>
         <br>
         <h1>
-            <font size="9" face="Georgia, Arial" color="#990000">R</font><font color="white">ecetas</font>
+             {{#each receta}}
+
+              <font size="9" face="Georgia" color="white">{{nombre}}</font>
+              
+              {{/each}}
+
         </h1>
         <div class="alert alert-light">
 <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -34,7 +39,38 @@
                 <div class="card-footer">
                     
                     <button type="button" class="btn btn-outline-dark">Modificar</button>
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                    <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#recet{{id_receta}}">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="recet{{id_receta}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-white bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¡Mensaje!</h5>
+        
+      </div>
+      <div class="modal-body">
+        <h4>Estas seguro de eliminar:</h4> <br>
+         <img src="/imagenes/{{img}}" class="card-img-top" height="270">
+                
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+      </div>
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+        <a href="/CookGolden/recetdelet/{{id_receta}}">
+            <button type="button" class="btn btn-outline-danger">Aceptar</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
                 </div>
             </div>
                 </div>
@@ -63,7 +99,38 @@
                 <div class="card-footer">
                     
                     <button type="button" class="btn btn-outline-dark">Modificar</button>
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                      <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#recet{{id_receta}}">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="recet{{id_receta}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-white bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¡Mensaje!</h5>
+        
+      </div>
+      <div class="modal-body">
+        <h4>Estas seguro de eliminar:</h4> <br>
+         <img src="/imagenes/{{img}}" class="card-img-top" height="270">
+                
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+      </div>
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+        <a href="/CookGolden/recetdelet/{{id_receta}}">
+            <button type="button" class="btn btn-outline-danger">Aceptar</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
                 </div>
             </div>
                 </div>
@@ -93,7 +160,38 @@
                 <div class="card-footer">
                     
                     <button type="button" class="btn btn-outline-dark">Modificar</button>
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
+                      <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#recet{{id_receta}}">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="recet{{id_receta}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-white bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¡Mensaje!</h5>
+        
+      </div>
+      <div class="modal-body">
+        <h4>Estas seguro de eliminar:</h4> <br>
+         <img src="/imagenes/{{img}}" class="card-img-top" height="270">
+                
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+      </div>
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+        <a href="/CookGolden/recetdelet/{{id_receta}}">
+            <button type="button" class="btn btn-outline-danger">Aceptar</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
                 </div>
             </div>
                 </div>

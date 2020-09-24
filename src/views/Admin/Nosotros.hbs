@@ -12,9 +12,12 @@
   <p>
                 <font style="color: white;" face="Georgia" size="4"> {{mensaje}}</font>
             </p>
-            {{/each}}
-            <button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Modificar</font></button>
+            <a href="/CookGolden/visiondelete/{{id_vision}}">
             <button type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
+</a>
+<button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Modificar</font></button>
+            {{/each}}
+           
 </div>
 <br>
   <div class="alert " role="alert">
@@ -25,10 +28,14 @@
   <p>
                 <font style="color: white;" face="Georgia" size="4"> {{mensaje}}</font>
             </p>
+            <a href="/CookGolden/misiondelete/{{id_mision}}">
+            <button type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
+</a>
+<button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Modificar</font></button>
             {{/each}}
             
-            <button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Modificar</font></button>
-            <button type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
+            
+            
 </div>
 <div class="alert  " role="alert">
     <center>

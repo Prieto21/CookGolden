@@ -1,1 +1,52 @@
-<h1 style="color: white;"> SOy la vista de las clases para agregar y todo</h1>
+<div class="container">
+<center>
+<br>
+        <h1>
+            <font size="9" face="Georgia, Arial" color="#990000">C</font><font color="white">lases <font size="9" face="Georgia, Arial" color="#990000">V</font>irtuales</font>
+        </h1>
+        <br>
+
+<table>
+    <tr>
+        <td>
+            <form action="/CookGolden/clases" method="POST">
+    <input type="text" class="form-control" placeholder="Ingrese Link" name="link">
+    
+        </td>
+        <td>
+            <button type="submit" class="btn btn-outline-success">Subir</button>
+            </form>
+        </td>
+    </tr>
+
+</table>
+
+ 
+  <br>
+<div class="row">
+
+  
+    {{#each clases}}
+       <div class="col-sm-6">
+           
+        <iframe width="560" height="315" src="{{link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+                    <a href="/CookGolden/clasesdelete/{{id_clases}}">
+                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+              </a>
+                    <button type="button" class="btn btn-outline-info">Modificar</button>
+        </div>
+    {{/each}}
+  
+
+
+</div>
+    
+    
+    
+    
+    
+    
+</center>
+
+</div>

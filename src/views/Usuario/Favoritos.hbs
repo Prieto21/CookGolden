@@ -2,7 +2,11 @@
     <center>
         <br>
         <h1>
-            <font size="9" face="Georgia, Arial" color="#990000">F</font><font color="white">avoritos</font>
+             {{#each namefavoritos}}
+
+              <font size="9" face="Georgia" color="white">{{nombre}}</font>
+              
+              {{/each}}
         </h1>
         <hr>
 
@@ -19,7 +23,39 @@
                     <p class="card-text">{{descripcion}}</p>
                 </div>
                 <div class="card-footer">
-                    <button type="button" class="btn btn-outline-danger">Eliminar</button>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#fav{{id_favorito}}">
+  Eliminar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="fav{{id_favorito}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content text-white bg-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">¡Mensaje!</h5>
+        
+      </div>
+      <div class="modal-body">
+        <h4>Estas seguro de eliminar:</h4> <br>
+         <img src="/imagenes/{{img}}" class="card-img-top" height="270">
+                
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+      </div>
+      <div class="modal-footer">
+          
+        <button type="button" class="btn btn-outline-light" data-dismiss="modal">Cancelar</button>
+        <a href="/CookGolden/favoritos/{{id_favorito}}">
+            <button type="button" class="btn btn-outline-danger">Aceptar</button>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
+
                 </div>
             </div>
                 </div>
