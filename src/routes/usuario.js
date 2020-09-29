@@ -38,7 +38,7 @@ router.post('/addfavorito', async(req,res)=>{
 });
 router.get('/user/perfil',async(req,res)=>{
     const nameperfil = await pool.query('SELECT * FROM nameperfil;');
-    const user = await pool.query('SELECT * FROM usuarios u WHERE u.id_usuario=14;');
+    const user = await pool.query('SELECT * FROM usuarios u WHERE u.id_usuario=4;');
     res.render('Usuario/Perfil', {
         user,nameperfil,
         layout:"main_user"
@@ -46,7 +46,7 @@ router.get('/user/perfil',async(req,res)=>{
 });
 router.get('/user/favoritos',async(req,res)=>{
     const namefavoritos = await pool.query('SELECT * FROM namefavoritos;');
-    const fav = await pool.query('SELECT f.id_favorito, r.nombre, r.descripcion, r.img FROM favoritos f, recetas r, usuarios u WHERE f.id_receta = r.id_receta AND f.id_usuario = u.id_usuario AND u.id_usuario = 14;');
+    const fav = await pool.query('SELECT f.id_favorito, r.nombre, r.descripcion, r.img FROM favoritos f, recetas r, usuarios u WHERE f.id_receta = r.id_receta AND f.id_usuario = u.id_usuario AND u.id_usuario = 4;');
     res.render('Usuario/Favoritos', {
         fav,namefavoritos,
         layout:"main_user"

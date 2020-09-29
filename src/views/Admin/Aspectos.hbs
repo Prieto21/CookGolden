@@ -26,7 +26,7 @@
               <form action="/CookGolden/mision" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Misión</label>
-                  <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+                  <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
               </form>
@@ -48,7 +48,7 @@
               <form action="/CookGolden/vision" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Visión</label>
-                  <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3"></textarea>
+                  <textarea class="form-control" name="mensaje" placeholder="Escribe..." rows="3" required></textarea>
                 </div>
                 <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
               </form>
@@ -81,7 +81,7 @@
               <form action="/CookGolden/fondo" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlFile1">Fondo</label>
-                  <input type="file" class="form-control-file" name="img">
+                  <input type="file" class="form-control-file" name="img" required>
                 </div>
 
                 <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
@@ -114,7 +114,7 @@
               <form action="/CookGolden/carrusel" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Imagen De Carrusel</label>
-                  <input type="file" class="form-control-file" name="img">
+                  <input type="file" class="form-control-file" name="img" required>
                 </div>
 
                 <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
@@ -152,7 +152,7 @@
               <form action="/CookGolden/perfil" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Titulo De Perfil</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre"
+                  <input type="text" class="form-control" name="nombre" required placeholder="Ingrese Nombre"
                     aria-describedby="emailHelp">
 
                 </div>
@@ -181,7 +181,7 @@
               <form action="/CookGolden/nombre" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Nombre De La Pagina</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Nombre">
+                  <input type="text" class="form-control" required name="nombre" placeholder="Ingrese Nombre">
 
 
                 </div>
@@ -216,7 +216,7 @@
               <form action="/CookGolden/receta" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Titulo De Recetas</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                  <input type="text" class="form-control" required name="nombre" placeholder="Ingrese Titulo">
                 </div>
                 <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
               </form>
@@ -247,7 +247,7 @@
               <form action="/CookGolden/comida" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Titulo De Comidas</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                  <input type="text" class="form-control" required name="nombre" placeholder="Ingrese Titulo">
                 </div>
                 <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
               </form>
@@ -279,7 +279,7 @@
               <form action="/CookGolden/bebida" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Titulo De Bebidas</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                  <input type="text" class="form-control" required name="nombre" placeholder="Ingrese Titulo">
                 </div>
                 <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
               </form>
@@ -310,7 +310,7 @@
               <form action="/CookGolden/postre" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Titulo De Postres</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                  <input type="text" class="form-control" required name="nombre" placeholder="Ingrese Titulo">
                 </div>
                 <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
               </form>
@@ -344,7 +344,7 @@
               <form action="/CookGolden/bienvenida" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Mensaje De Bienvenida</label>
-                  <input type="text" class="form-control" name="mensaje" placeholder="Ingrese Titulo">
+                  <input type="text" class="form-control" required name="mensaje" placeholder="Ingrese Titulo">
                 </div>
                 <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
               </form>
@@ -376,7 +376,7 @@
               <form action="/CookGolden/colores" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Colores</label>
-                  <input type="text" class="form-control" name="color" placeholder="Escribe el color">
+                  <input type="text" class="form-control" required name="color" placeholder="Escribe el color">
                 </div>
                 <button type="submit" class="btn btn-outline-light btn-block">Guardar</button>
               </form>
@@ -448,7 +448,7 @@
               <form action="/CookGolden/namefavoritos" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlTextarea1">Titulo De Favoritos</label>
-                  <input type="text" class="form-control" name="nombre" placeholder="Ingrese Titulo">
+                  <input type="text" class="form-control" required name="nombre" placeholder="Ingrese Titulo">
                 </div>
                 <button type="submit" class="btn btn-outline-dark btn-block">Guardar</button>
               </form>
