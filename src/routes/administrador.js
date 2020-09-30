@@ -367,6 +367,135 @@ router.get('/visiondelete/:id_vision',async(req,res)=>{
 });
 
 
+//MODIFICAR
+
+ 
+router.post('/admin/modificar/:id_usuario', async(req,res)=>{
+    const {id_usuario} = req.params;
+    const {nombre, apellido, usuario, contra, img, id_rol} = req.body;
+    const NewUsuario = {nombre, apellido, usuario, contra, img, id_rol};
+    await pool.query('UPDATE usuarios SET ? WHERE id_usuario = ?',[NewUsuario, id_usuario]);    
+    res.redirect('/CookGolden/admin');
+});
+
+
+router.post('/admin/recetas/modificar/:id_receta', async(req,res)=>{
+    const {id_receta} = req.params;
+    const {nombre, descripcion, img, id_clasif} = req.body;
+    const NewUsuario = {nombre, descripcion, img, id_clasif};
+    await pool.query('UPDATE recetas SET ? WHERE id_receta = ?',[NewUsuario, id_receta]);    
+    res.redirect('/CookGolden/admin/recetas');
+});
+
+
+router.post('/admin/clases/modificar/:id_clases', async(req,res)=>{
+    const {id_clases} = req.params;
+    const {link} = req.body;
+    const NewUsuario = {link};
+    await pool.query('UPDATE clases SET ? WHERE id_clases = ?',[NewUsuario, id_clases]);    
+    res.redirect('/CookGolden/admin/clases');
+});
+
+
+router.post('/admin/vision/modificar/:id_vision', async(req,res)=>{
+    const {id_vision} = req.params;
+    const {mensaje} = req.body;
+    const NewUsuario = {mensaje};
+    await pool.query('UPDATE vision SET ? WHERE id_vision = ?',[NewUsuario, id_vision]);    
+    res.redirect('/CookGolden/admin/nosotros');
+});
+
+router.post('/admin/mision/modificar/:id_mision', async(req,res)=>{
+    const {id_mision} = req.params;
+    const {mensaje} = req.body;
+    const NewUsuario = {mensaje};
+    await pool.query('UPDATE mision SET ? WHERE id_mision = ?',[NewUsuario, id_mision]);    
+    res.redirect('/CookGolden/admin/nosotros');
+});
+
+router.post('/admin/fondo/modificar/:id_fondo', async(req,res)=>{
+    const {id_fondo} = req.params;
+    const {img} = req.body;
+    const NewUsuario = {img};
+    await pool.query('UPDATE fondo SET ? WHERE id_fondo = ?',[NewUsuario, id_fondo]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/admin/carrusel/modificar/:id_carrusel', async(req,res)=>{
+    const {id_carrusel} = req.params;
+    const {img} = req.body;
+    const NewUsuario = {img};
+    await pool.query('UPDATE carrusel SET ? WHERE id_carrusel = ?',[NewUsuario, id_carrusel]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/admin/nameperfil/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE nameperfil SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/admin/namepagina/modificar/:id_nombre', async(req,res)=>{
+    const {id_nombre} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE nombre SET ? WHERE id_nombre = ?',[NewUsuario, id_nombre]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/admin/namerece/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE receta SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+
+router.post('/admin/comida/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE comida SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/admin/bebida/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE bebida SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+
+router.post('/admin/postre/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE postre SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+
+router.post('/admin/favo/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {nombre} = req.body;
+    const NewUsuario = {nombre};
+    await pool.query('UPDATE namefavoritos SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/admin/bienvenida/modificar/:id', async(req,res)=>{
+    const {id} = req.params;
+    const {mensaje} = req.body;
+    const NewUsuario = {mensaje};
+    await pool.query('UPDATE bienvenida SET ? WHERE id = ?',[NewUsuario, id]);    
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+
 
 
 

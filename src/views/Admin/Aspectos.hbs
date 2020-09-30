@@ -73,7 +73,39 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button>
+                         <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#fondo{{id_fondo}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="fondo{{id_fondo}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/fondo/modificar/{{id_fondo}}" method="POST">
+        <img src="/imagenes/{{img}}" height="200">
+              <br> 
+              <br>
+              <div class="form-group">
+                  
+                  <input type="file" class="form-control-file" name="img" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
 
               {{/each}}
 
@@ -105,7 +137,39 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button>
+               <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#carru{{id_carrusel}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="carru{{id_carrusel}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/carrusel/modificar/{{id_carrusel}}" method="POST">
+        <img src="/imagenes/{{img}}" height="200">
+              <br> 
+              <br>
+              <div class="form-group">
+                  
+                  <input type="file" class="form-control-file" name="img" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
 
               {{/each}}
 
@@ -145,7 +209,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#perfil{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="perfil{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/nameperfil/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
               <hr>
@@ -175,7 +269,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#pagina{{id_nombre}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="pagina{{id_nombre}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/namepagina/modificar/{{id_nombre}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
               <hr>
               <form action="/CookGolden/nombre" method="POST">
@@ -209,7 +333,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#rece{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="rece{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/namerece/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
               <hr>
@@ -240,7 +394,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+               <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#comida{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="comida{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/comida/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
               <hr>
@@ -272,7 +456,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#bebida{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="bebida{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/bebida/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
               <hr>
@@ -303,7 +517,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#postre{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="postre{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/postre/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
               <hr>
@@ -336,7 +580,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+               <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#bienvenida{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="bienvenida{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/bienvenida/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="mensaje" value="{{mensaje}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
 
@@ -399,12 +673,12 @@
 
               <button type="button" class="btn btn-outline-{{color}}">Color Actual</button>
               
-<br>
+
                <a href="/CookGolden/btncolorsdelete/{{id_botones}}">
-                <button type="button" class="btn btn-outline-danger ">Eliminar</button>
+                <button type="button" class="btn btn-outline-danger ">X</button>
               </a>
-              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+             
+             
 
               {{/each}}
 
@@ -441,7 +715,37 @@
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <button type="button" class="btn btn-outline-info ">Modificar</button><br>
+              <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#favo{{id}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="favo{{id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/favo/modificar/{{id}}" method="POST">
+        
+              <div class="form-group">
+                  
+                  <input type="text"  name="nombre" value="{{nombre}}" required>
+                </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
               {{/each}}
 
               <hr>

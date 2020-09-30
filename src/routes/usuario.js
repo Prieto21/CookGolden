@@ -132,6 +132,16 @@ router.get('/favoritos/:id_favorito',async(req,res)=>{
     res.redirect('/CookGolden/user/favoritos');
 });
 
+//MODIFICAR 
+    
+router.post('/user/perfil/modificar/:id_usuario', async(req,res)=>{
+    const {id_usuario} = req.params;
+    const {nombre, apellido, usuario, contra, img, id_rol} = req.body;
+    const NewUsuario = {nombre, apellido, usuario, contra, img, id_rol};
+    await pool.query('UPDATE usuarios SET ? WHERE id_usuario = ?',[NewUsuario, id_usuario]);    
+    res.redirect('/CookGolden/user/perfil');
+});
+
 
 
 

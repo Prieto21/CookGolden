@@ -15,7 +15,41 @@
             <a href="/CookGolden/visiondelete/{{id_vision}}">
             <button type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
 </a>
-<button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Modificar</font></button>
+
+  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#vision{{id_vision}}">
+  <font style="color: white;">Modificar</font>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="vision{{id_vision}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/vision/modificar/{{id_vision}}" method="POST">
+        
+         
+        <div class="form-group">
+        <textarea name="mensaje" id="" cols="57" rows="7">{{mensaje}}</textarea>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
+
+
+
             {{/each}}
            
 </div>
@@ -31,7 +65,38 @@
             <a href="/CookGolden/misiondelete/{{id_mision}}">
             <button type="button" class="btn btn-outline-danger btn-block">Eliminar</button>
 </a>
-<button type="button" class="btn btn-outline-dark btn-block"><font style="color: white;">Modificar</font></button>
+
+  <button type="button" class="btn btn-outline-dark btn-block" data-toggle="modal" data-target="#mision{{id_mision}}">
+  <font style="color: white;">Modificar</font>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="mision{{id_mision}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/mision/modificar/{{id_mision}}" method="POST">
+        
+         
+        <div class="form-group">
+        <textarea name="mensaje" id="" cols="57" rows="7">{{mensaje}}</textarea>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
             {{/each}}
             
             

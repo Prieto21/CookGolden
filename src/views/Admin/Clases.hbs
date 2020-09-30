@@ -34,7 +34,38 @@
                     <a href="/CookGolden/clasesdelete/{{id_clases}}">
                 <button type="button" class="btn btn-outline-danger ">Eliminar</button>
               </a>
-                    <button type="button" class="btn btn-outline-info">Modificar</button>
+                          <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#clases{{id_clases}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="clases{{id_clases}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-dark text-light">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/clases/modificar/{{id_clases}}" method="POST">
+        <iframe width="300" height="315" src="{{link}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    </iframe>
+         <hr>
+        <div class="form-group">
+        <input type="text" name="link" class="form-control" value="{{link}}"><br>
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
         </div>
     {{/each}}
   

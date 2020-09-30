@@ -39,7 +39,53 @@
                                 <p>
                                     <font style="color: black;" face="Georgia" size="4"> {{rol}} </font>
                                 </p>
-                                <button type="button" class="btn btn-outline-dark">Modificar</button>
+                                <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#user{{id_usuario}}">
+  Modificar
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="user{{id_usuario}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modificar</h5>
+       
+      </div>
+      <div class="modal-body">
+          
+        <form action="/CookGolden/admin/modificar/{{id_usuario}}" method="POST">
+        <img src="/imagenes/{{img}}" height="250"> <hr>
+        <div class="form-group">
+        <input type="text" name="nombre" class="form-control" value="{{nombre}}"><br>
+        </div>
+        <div class="form-group">
+        <input type="text" name="apellido" class="form-control" value="{{apellido}}"><br>
+        </div>
+        <div class="form-group">
+        <input type="text" name="usuario" class="form-control" value="{{usuario}}"><br>
+        </div>
+        <div class="form-group">
+        <input type="text" name="contra" class="form-control" value="{{contra}}"><br>
+        </div>
+        
+        
+        <div class="form-group">
+        <input type="text" name="img" class="form-control" value="{{img}}" hidden>
+        </div>
+        <div class="form-group">
+        <input type="text" name="id_rol" class="form-control" value="{{id_rol}}" hidden>
+        </div>
+      </div>
+      <div class="modal-footer">
+               <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-outline-success" >actualizar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cierre -->
+
                             </div>
                             {{/each}}
                         </center>
@@ -83,8 +129,7 @@
                                                         </p>
                                                     </div>
                                                     <div class="card-footer">
-                                                        <button type="button"
-                                                            class="btn btn-outline-dark">Modificar</button>
+                                                       
                                                         
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#user{{id_usuario}}">
