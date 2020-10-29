@@ -1,81 +1,159 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../database');
+const administradorController = require('../controllers/administradorController');
+const bienvenidaController = require('../controllers/bienvenidaController');
+const usuarioswebController = require('../controllers/usuarioswebController');
+
+
+
+//LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR LISTAR
 
 router.get('/admin', async (req, res) => {
-
-    //const role = await pool.query('SELECT * FROM roles;');
-
-    const nameperfil = await pool.query('SELECT * FROM nameperfil;');
-    const useradmin = await pool.query('SELECT * FROM usuarios u, roles r WHERE u.id_rol = r.id_rol AND u.id_rol= 1;');
-    const users = await pool.query('SELECT * FROM usuarios u, roles r WHERE u.id_rol = r.id_rol AND u.id_rol= 2;');
+    //const nameperfil = await pool.query('SELECT * FROM nameperfil;');
+    //const useradmin = await pool.query('SELECT * FROM usuarios u, roles r WHERE u.id_rol = r.id_rol AND u.id_rol= 1;');
+    //const users = await pool.query('SELECT * FROM usuarios u, roles r WHERE u.id_rol = r.id_rol AND u.id_rol= 2;');
+    const nameperfil = await administradorController.listarnameperfil(req);
+    const useradmin = await administradorController.listaruseradmin(req);
+    const users = await administradorController.listarusers(req);
     res.render('Admin/Inicio', {
         useradmin, nameperfil,
         users,
         layout: "main_admin"
     });
 });
+
+
 router.get('/admin/recetas', async (req, res) => {
 
-    const receta = await pool.query('SELECT * FROM receta;');
-    const comidas = await pool.query('SELECT * FROM recetas r, clasificacion c WHERE r.id_clasif = c.id_clasif AND r.id_clasif = 1;');
-    const bebidas = await pool.query('SELECT * FROM recetas r, clasificacion c WHERE r.id_clasif = c.id_clasif AND r.id_clasif = 2;');
-    const postres = await pool.query('SELECT * FROM recetas r, clasificacion c WHERE r.id_clasif = c.id_clasif AND r.id_clasif = 3;');
+    //const receta = await pool.query('SELECT * FROM receta;');
+    //const comidas = await pool.query('SELECT * FROM recetas r, clasificacion c WHERE r.id_clasif = c.id_clasif AND r.id_clasif = 1;');
+    //const bebidas = await pool.query('SELECT * FROM recetas r, clasificacion c WHERE r.id_clasif = c.id_clasif AND r.id_clasif = 2;');
+    //const postres = await pool.query('SELECT * FROM recetas r, clasificacion c WHERE r.id_clasif = c.id_clasif AND r.id_clasif = 3;');
+    const receta = await administradorController.listarreceta(req);
+    const comidas = await administradorController.listarcomidas(req);
+    const bebidas = await administradorController.listarbebidas(req);
+    const postres = await administradorController.listarpostres(req);
     res.render('Admin/Recetas', {
         comidas, bebidas, postres, receta,
         layout: "main_admin"
     });
 });
-router.get('/admin/nosotros', async (req, res) => {
-    const back = await pool.query('SELECT * FROM fondo;');
-    const vision = await pool.query('SELECT * FROM vision;');
-    const mision = await pool.query('SELECT * FROM mision;');
-    res.render('Admin/Nosotros', {
-        vision, mision, back,
+
+router.get('/admin/nuevo', async (req, res) => {
+    //const clasificacion = await pool.query('SELECT * FROM clasificacion;');
+    const clasificacion = await administradorController.listarclasificacion(req);
+    res.render('Admin/Agregar', {
+        clasificacion,
         layout: "main_admin"
     });
 });
 
+
 router.get('/admin/aspectos', async (req, res) => {
 
-    const nombre = await pool.query('SELECT * FROM nombre;');
-    const carrusel = await pool.query('SELECT * FROM carrusel;')
-    const namefavoritos = await pool.query('SELECT * FROM namefavoritos;');
-    const bienvenida = await pool.query('SELECT * FROM bienvenida;');
-    const btnColors = await pool.query('SELECT * FROM colores c, botones b WHERE c.id_colores = b.id_color;');
-    const colores = await pool.query('SELECT * FROM colores;');
-    const receta = await pool.query('SELECT * FROM receta;');
-    const comida = await pool.query('SELECT * FROM comida;');
-    const bebida = await pool.query('SELECT * FROM bebida;');
-    const postre = await pool.query('SELECT * FROM postre;');
-    const nameperfil = await pool.query('SELECT * FROM nameperfil;');
-    const vision = await pool.query('SELECT * FROM vision;');
-    const mision = await pool.query('SELECT * FROM mision;');
-    const fondo = await pool.query('SELECT * FROM fondo;');
+    //const nombre = await pool.query('SELECT * FROM nombre;');
+    //const carrusel = await pool.query('SELECT * FROM carrusel;')
+    //const namefavoritos = await pool.query('SELECT * FROM namefavoritos;');
+    //const bienvenida = await pool.query('SELECT * FROM bienvenida;');
+    //const btnColors = await pool.query('SELECT * FROM colores c, botones b WHERE c.id_colores = b.id_color;');
+    //const colores = await pool.query('SELECT * FROM colores;');
+    //const receta = await pool.query('SELECT * FROM receta;');
+    //const comida = await pool.query('SELECT * FROM comida;');
+    //const bebida = await pool.query('SELECT * FROM bebida;');
+    //const postre = await pool.query('SELECT * FROM postre;');
+    //const nameperfil = await pool.query('SELECT * FROM nameperfil;');
+    //const vision = await pool.query('SELECT * FROM vision;');
+    //const mision = await pool.query('SELECT * FROM mision;');
+    //const fondo = await pool.query('SELECT * FROM fondo;');
+    const nombre = await bienvenidaController.listar(req);
+    const carrusel = await usuarioswebController.listarcarrusel(req);
+    const namefavoritos = await usuarioswebController.listarnamefavoritos(req);
+    const bienvenida = await usuarioswebController.listarbienvenida(req);
+    const btnColors = await usuarioswebController.listarbtn(req);
+    const colores = await administradorController.listarcolores(req);//crear
+    const receta = await administradorController.listarreceta(req);
+    const comida = await usuarioswebController.listarcomidanombre(req);
+    const bebida = await usuarioswebController.listarnombrebebida(req);
+    const postre = await usuarioswebController.listarnombrepostre(req);
+    const nameperfil = await administradorController.listarnameperfil(req);
+    const vision = await usuarioswebController.listarvision(req);
+    const mision = await usuarioswebController.listarmision(req);
+    const fondo = await administradorController.listarfondo(req);//crear
     res.render('Admin/Aspectos', {
         vision, mision, fondo, nombre, nameperfil, carrusel, receta, comida, bebida, postre, namefavoritos, bienvenida,
         colores, btnColors,
         layout: "main_admindos"
     });
 });
-router.get('/admin/nuevo', async (req, res) => {
-    //const role = await pool.query('SELECT * FROM roles;');
-    const back = await pool.query('SELECT * FROM fondo;');
-    const clasificacion = await pool.query('SELECT * FROM clasificacion;');
-    res.render('Admin/Agregar', {
-        clasificacion, back,
-        layout: "main_admin"
-    });
-});
+
+
 router.get('/admin/clases', async (req, res) => {
 
-    const clases = await pool.query('SELECT * FROM clases;');
+    //const clases = await pool.query('SELECT * FROM clases;');
+    const clases = await usuarioswebController.listarclases(req);
     res.render('Admin/Clases', {
         clases,
         layout: "main_admin"
 
     });
 });
+
+
+router.get('/admin/comentarios', async (req, res) => {
+    //const back = await pool.query('SELECT * FROM fondo;');
+    //const coment = await pool.query('SELECT * FROM usuarios u, comentarios c WHERE c.id_usuario = u.id_usuario ORDER BY id_comentario DESC;');
+    const coment = await usuarioswebController.listarcoment(req);
+    res.render('Admin/Comentarios', {
+        coment,
+        layout: "main_admin"
+    });
+});
+
+
+router.get('/admin/servicios', async (req, res) => {
+    
+    //const serv = await pool.query('SELECT * FROM servicios s, usuarios u WHERE s.id_usuario = u.id_usuario AND s.id_chat = 1;');
+    const serv = await usuarioswebController.listarserv(req);
+    res.render('Admin/Servicio', {
+        serv,
+        layout: "main_admin"
+    });
+});
+
+
+
+router.get('/admin/nosotros', async (req, res) => {
+    
+    //const vision = await pool.query('SELECT * FROM vision;');
+    //const mision = await pool.query('SELECT * FROM mision;');
+    const vision = await usuarioswebController.listarvision(req);
+    const mision = await usuarioswebController.listarmision(req);
+    res.render('Admin/Nosotros', {
+        vision, mision,
+        layout: "main_admin"
+    });
+});
+
+//ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR
+
+
+// AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR
+
+
+// MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 router.post('/mision', async (req, res) => {
@@ -200,22 +278,6 @@ router.post('/nuevarecet', async (req, res) => {
 });
 
 
-router.get('/admin/comentarios', async (req, res) => {
-    const back = await pool.query('SELECT * FROM fondo;');
-    const coment = await pool.query('SELECT * FROM usuarios u, comentarios c WHERE c.id_usuario = u.id_usuario ORDER BY id_comentario DESC;');
-    res.render('Admin/Comentarios', {
-        coment, back,
-        layout: "main_admin"
-    });
-});
-router.get('/admin/servicios', async (req, res) => {
-    const back = await pool.query('SELECT * FROM fondo;');
-    const serv = await pool.query('SELECT * FROM servicios s, usuarios u WHERE s.id_usuario = u.id_usuario AND s.id_chat = 1;');
-    res.render('Admin/Servicio', {
-        serv, back,
-        layout: "main_admin"
-    });
-});
 
 
 router.post('/addser/admin', async (req, res) => {

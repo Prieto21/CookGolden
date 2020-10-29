@@ -1,3 +1,4 @@
+'use strict'
 const  express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
@@ -38,6 +39,14 @@ app.use('/CookGolden',require('./routes/bienvenida'));
 app.use('/CookGolden',require('./routes/usuario'));
 //app.use('/usuario',require('./routes/usuario'));
 app.use('/CookGolden',require('./routes/administrador'));
+
+
+//RUTAS DE LA API
+app.use('/Api',require('./routes/api/usuarios'));
+app.use('/Api',require('./routes/api/recetas'));
+
+
+
 
 
 //public
