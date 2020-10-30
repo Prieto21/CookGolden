@@ -137,299 +137,277 @@ router.get('/admin/nosotros', async (req, res) => {
 
 //ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR ELIMINAR
 
-
-// AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR
-
-
-// MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-router.post('/mision', async (req, res) => {
-
-    const { mensaje } = req.body;
-    const NewMision = { mensaje };
-    await pool.query('INSERT INTO mision SET ?', [NewMision]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/clases', async (req, res) => {
-
-    const { link } = req.body;
-    const NewVideo = { link };
-    await pool.query('INSERT INTO clases SET ?', [NewVideo]);
-    res.redirect('/CookGolden/admin/clases');
-});
-router.post('/btnColors', async (req, res) => {
-
-    const { id_color } = req.body;
-    const BtnColor = { id_color };
-    await pool.query('INSERT INTO botones SET ?', [BtnColor]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-router.post('/colores', async (req, res) => {
-
-    const { color } = req.body;
-    const NewColor = { color };
-    await pool.query('INSERT INTO colores SET ?', [NewColor]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/bienvenida', async (req, res) => {
-
-    const { mensaje } = req.body;
-    const NewBienvenida = { mensaje };
-    await pool.query('INSERT INTO bienvenida SET ?', [NewBienvenida]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/receta', async (req, res) => {
-
-    const { nombre } = req.body;
-    const TituloReceta = { nombre };
-    await pool.query('INSERT INTO receta SET ?', [TituloReceta]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-router.post('/namefavoritos', async (req, res) => {
-
-    const { nombre } = req.body;
-    const TituloFavoritos = { nombre };
-    await pool.query('INSERT INTO namefavoritos SET ?', [TituloFavoritos]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-router.post('/comida', async (req, res) => {
-
-    const { nombre } = req.body;
-    const TituloComida = { nombre };
-    await pool.query('INSERT INTO comida SET ?', [TituloComida]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-router.post('/bebida', async (req, res) => {
-
-    const { nombre } = req.body;
-    const Titulobebida = { nombre };
-    await pool.query('INSERT INTO bebida SET ?', [Titulobebida]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-router.post('/postre', async (req, res) => {
-
-    const { nombre } = req.body;
-    const TituloPostre = { nombre };
-    await pool.query('INSERT INTO postre SET ?', [TituloPostre]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/fondo', async (req, res) => {
-
-    const { img } = req.body;
-    const NewFondo = { img };
-    await pool.query('INSERT INTO fondo SET ?', [NewFondo]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-router.post('/carrusel', async (req, res) => {
-
-    const { img } = req.body;
-    const NewFondo = { img };
-    await pool.query('INSERT INTO carrusel SET ?', [NewFondo]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/nombre', async (req, res) => {
-
-    const { nombre } = req.body;
-    const NewNombre = { nombre };
-    await pool.query('INSERT INTO nombre SET ?', [NewNombre]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/perfil', async (req, res) => {
-
-    const { nombre } = req.body;
-    const NewNombre = { nombre };
-    await pool.query('INSERT INTO nameperfil SET ?', [NewNombre]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/vision', async (req, res) => {
-
-    const { mensaje } = req.body;
-    const NewVision = { mensaje };
-    await pool.query('INSERT INTO vision SET ?', [NewVision]);
-    res.redirect('/CookGolden/admin/aspectos');
-});
-
-router.post('/nuevarecet', async (req, res) => {
-
-    const { nombre, descripcion, img, id_clasif } = req.body;
-    const NewReceta = { nombre, descripcion, img, id_clasif };
-    await pool.query('INSERT INTO recetas SET ?', [NewReceta]);
-    res.redirect('/CookGolden/admin/nuevo');
-});
-
-
-
-
-router.post('/addser/admin', async (req, res) => {
-
-    const { id_chat, chat, id_usuario } = req.body;
-    const NewChat = { id_chat, chat, id_usuario };
-    await pool.query('INSERT INTO servicios SET ?', [NewChat]);
-    res.redirect('/CookGolden/Admin/servicios');
-});
-
-//Eliminar
-
-
 router.get('/userdelete/:id_usuario',async(req,res)=>{
     const {id_usuario} = req.params;
-    await pool.query('DELETE FROM usuarios WHERE id_usuario = ?',[id_usuario]);    
-       
+    //await pool.query('DELETE FROM usuarios WHERE id_usuario = ?',[id_usuario]);    
+    await administradorController.DeleteUsuarios([id_usuario]);  
     res.redirect('/CookGolden/admin');
 });
 
+
 router.get('/recetdelet/:id_receta',async(req,res)=>{
     const {id_receta} = req.params;
-    await pool.query('DELETE FROM recetas WHERE id_receta = ?',[id_receta]);    
-       
+    //await pool.query('DELETE FROM recetas WHERE id_receta = ?',[id_receta]);    
+    await administradorController.DeleteRecetas([id_receta]);  
     res.redirect('/CookGolden/admin/recetas');
 });
 
 router.get('/fondodelete/:id_fondo',async(req,res)=>{
     const {id_fondo} = req.params;
-    await pool.query('DELETE FROM fondo WHERE id_fondo = ?',[id_fondo]);    
-       
+    //await pool.query('DELETE FROM fondo WHERE id_fondo = ?',[id_fondo]);    
+    await administradorController.DeleteFondo([id_fondo]);  
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 router.get('/carruseldelete/:id_carrusel',async(req,res)=>{
     const {id_carrusel} = req.params;
-    await pool.query('DELETE FROM carrusel WHERE id_carrusel = ?',[id_carrusel]);    
-       
+    //await pool.query('DELETE FROM carrusel WHERE id_carrusel = ?',[id_carrusel]);    
+    await administradorController.DeleteCarrusel([id_carrusel]);  
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 
 router.get('/perfildelete/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM nameperfil WHERE id = ?',[id]);    
-       
+    //await pool.query('DELETE FROM nameperfil WHERE id = ?',[id]);    
+    await administradorController.Deletenameperfil([id]);  
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 router.get('/pagdelete/:id_nombre',async(req,res)=>{
     const {id_nombre} = req.params;
-    await pool.query('DELETE FROM nombre WHERE id_nombre = ?',[id_nombre]);    
-       
+    //await pool.query('DELETE FROM nombre WHERE id_nombre = ?',[id_nombre]);    
+    await administradorController.Deletenamepagina([id_nombre]);  
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 
 router.get('/namerecet/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM receta WHERE id = ?',[id]);    
-       
+    //await pool.query('DELETE FROM receta WHERE id = ?',[id]);    
+    await administradorController.DeletenameReceta([id]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 router.get('/comidadelete/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM comida WHERE id = ?',[id]);    
-       
+    //await pool.query('DELETE FROM comida WHERE id = ?',[id]);    
+    await administradorController.DeletenameComida([id]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 router.get('/bebidadelete/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM bebida WHERE id = ?',[id]);    
-       
+    //await pool.query('DELETE FROM bebida WHERE id = ?',[id]);    
+    await administradorController.DeletenameBebida([id]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 router.get('/postredelete/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM postre WHERE id = ?',[id]);    
-       
+    //await pool.query('DELETE FROM postre WHERE id = ?',[id]);    
+    await administradorController.DeletenamePostre([id]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 
 router.get('/welcomedelete/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM bienvenida WHERE id = ?',[id]);    
-       
+    //await pool.query('DELETE FROM bienvenida WHERE id = ?',[id]);    
+    await administradorController.DeleteBienvenida([id]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 
+
 router.get('/coloresdelete/:id_colores',async(req,res)=>{
     const {id_colores} = req.params;
-    await pool.query('DELETE FROM colores WHERE id_colores = ?',[id_colores]);    
-       
+    //
+    await administradorController.DeleteColores([id_colores]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 router.get('/btncolorsdelete/:id_botones',async(req,res)=>{
     const {id_botones} = req.params;
-    await pool.query('DELETE FROM botones WHERE id_botones = ?',[id_botones]);    
-       
+    //
+    await administradorController.DeleteBotones([id_botones]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 router.get('/namefavdelete/:id',async(req,res)=>{
     const {id} = req.params;
-    await pool.query('DELETE FROM namefavoritos WHERE id = ?',[id]);    
-       
+    //
+    await administradorController.DeletenameFavorito([id]); 
     res.redirect('/CookGolden/admin/aspectos');
 });
 
+
+
 router.get('/clasesdelete/:id_clases',async(req,res)=>{
     const {id_clases} = req.params;
-    await pool.query('DELETE FROM clases WHERE id_clases = ?',[id_clases]);    
-       
+    //  
+    await administradorController.DeleteClases([id_clases]); 
     res.redirect('/CookGolden/admin/clases');
 });
 
 
 router.get('/comentdelete/:id_comentario',async(req,res)=>{
     const {id_comentario} = req.params;
-    await pool.query('DELETE FROM comentarios WHERE id_comentario = ?',[id_comentario]);    
-       
+    //   
+    await administradorController.DeleteComent([id_comentario]); 
     res.redirect('/CookGolden/admin/comentarios');
 });
 
 
 router.get('/chatdelete',async(req,res)=>{
     
-    await pool.query('DELETE FROM servicios');    
-       
+    //  
+    await administradorController.DeleteChat(); 
     res.redirect('/CookGolden/admin/servicios');
 });
 
 
 router.get('/misiondelete/:id_mision',async(req,res)=>{
     const {id_mision} = req.params;
-    await pool.query('DELETE FROM mision WHERE id_mision = ?',[id_mision]);    
-       
+    //  
+    await administradorController.DeleteMision(id_mision); 
     res.redirect('/CookGolden/admin/nosotros');
 });
 
 
 router.get('/visiondelete/:id_vision',async(req,res)=>{
     const {id_vision} = req.params;
-    await pool.query('DELETE FROM vision WHERE id_vision = ?',[id_vision]);    
-       
+    //    
+    await administradorController.DeleteVision(id_vision); 
     res.redirect('/CookGolden/admin/nosotros');
 });
 
 
-//MODIFICAR
+
+
+// AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR AGREGAR
+
+router.post('/mision', async (req, res) => {
+
+   //
+    await administradorController.AddMision(req);   
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/btnColors', async (req, res) => {
+
+    //
+    await administradorController.AddBoton(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/colores', async (req, res) => {
+
+    //
+    await administradorController.AddColores(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/bienvenida', async (req, res) => {
+
+    //
+    await administradorController.AddBienvenida(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/receta', async (req, res) => {
+
+    //
+    await administradorController.Addnamereceta(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/namefavoritos', async (req, res) => {
+
+    //
+    await administradorController.Addnamefavorito(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/comida', async (req, res) => {
+
+    //
+    await administradorController.Addnamecomida(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/bebida', async (req, res) => {
+
+    //
+    await administradorController.Addnamebebida(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/postre', async (req, res) => {
+
+    //
+    await administradorController.Addnamepostre(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/fondo', async (req, res) => {
+
+    //
+    await administradorController.Addfondo(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+router.post('/carrusel', async (req, res) => {
+
+    //
+    await administradorController.Addcarrusel(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/nombre', async (req, res) => {
+
+   //
+    await administradorController.Addnamepagina(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/perfil', async (req, res) => {
+
+    //
+    await administradorController.Addnameperfil(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/vision', async (req, res) => {
+
+    //
+    await administradorController.AddVision(req);  
+    res.redirect('/CookGolden/admin/aspectos');
+});
+
+router.post('/nuevarecet', async (req, res) => {
+
+    //
+    await administradorController.AddRecetas(req);   
+    res.redirect('/CookGolden/admin/nuevo');
+});
+
+
+router.post('/clases', async (req, res) => {
+
+   //
+    await administradorController.AddClases(req);   
+    res.redirect('/CookGolden/admin/clases');
+});
+
+
+router.post('/addser/admin', async (req, res) => {
+    //
+    await usuarioswebController.AddChat(req);    
+    res.redirect('/CookGolden/Admin/servicios');
+});
+
+
+
+
+
+
+
+//NOS FALTA SABER COMO HACER MODIFICAR EN MVC
+
+
+
+// MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR MODIFICAR
 
  
 router.post('/admin/modificar/:id_usuario', async(req,res)=>{
